@@ -1,0 +1,46 @@
+# ======================================================
+# miniRT Showcase Scene (Corrected)
+# Features: Multi-cam, all shapes, all materials
+# ======================================================
+
+# --- Lighting Setup ---
+# A soft ambient light to ensure nothing is pure black.
+A   0.2   255,255,255
+
+# Two point lights to create interesting highlights and shadows.
+# A bright white light from the top-left.
+L   -20,20,-30   0.7   255,255,255
+# A dimmer blue light from the right.
+L   20,10,-20    0.5   150,200,255
+
+
+# --- Camera Setup ---
+# Press 'C' to cycle through these views. Use arrows to move and zoom.
+# Camera 1: Main overview shot. (FIXED a non-normalized vector)
+C   0,5,-40   0,0,1   75
+# Camera 2: Top-down view.
+C   0,30,1    0,-1,0     80
+# Camera 3: Close-up on the glass sphere.
+C   -15,0,5   1,0,0      50
+
+
+# --- Room constructed from planes ---
+# Floor with a mirror material to show reflections.
+pl  0,-10,0   0,1,0    200,200,200   mirror
+# Back wall (diffuse gray).
+pl  0,0,30    0,0,-1   150,255,140   def
+# Left wall (diffuse red).
+pl  -25,0,0   1,0,0    255,150,150   def
+# Right wall (diffuse blue).
+pl  25,0,0    -1,0,0   150,150,255   def
+
+
+# --- Objects ---
+# A large glass sphere in the middle to show refraction.
+sp  -3,-2,15   12   200,255,255   mirror
+
+# A smaller, shiny green cylinder.
+cy -12,-10,12 0,1,0 2 40 200,200,200 def
+
+# A standard diffuse sphere for reference.
+sp  5,-5,5    8    255,100,100   def

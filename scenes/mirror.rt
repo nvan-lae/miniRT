@@ -1,0 +1,37 @@
+A 0.2 255,255,255
+C 0,0,-10 0,0,1 70
+C -10,0,0 1,0,0 70
+L 0,9,0 1.0 255,255,255
+
+# Floor (light gray)
+pl 0,-10,0 0,1,0 150,200,150 def checker 255,255,255
+
+# Ceiling (dark gray)
+pl 0,10,0 0,-1,0 255,60,60 def checker 255,255,255
+
+# Walls (mirrored)
+pl -15,0,0 1,0,0 220,220,220 mirror   # Left
+pl 15,0,0 -1,0,0 220,220,220 mirror   # Right
+pl 0,0,15 0,0,-1 220,220,220 mirror   # Back
+pl 0,0,-15 0,0,1 220,220,220 mirror   # Front
+
+# Corner cylinders (mirrored)
+cy -15,-10,15 0,1,0 2 40 200,0,200 def
+cy 15,-10,15 0,1,0 2 40 0,200,200 def
+cy -15,-10,-15 0,1,0 2 40 200,200,0 def
+cy 15,-10,-15 0,1,0 2 40 0,200,255 def
+
+# Spheres at bottom of cylinders (half in floor)
+sp -15,-10,15 4 50,200,200 def
+sp 15,-10,15 4 200,50,200 def
+sp -15,-10,-15 4 200,200,50 def
+sp 15,-10,-15 4 100,100,100 def
+
+# Spheres at top of cylinders (half in ceiling)
+sp -15,10,15 4 50,200,200 def
+sp 15,10,15 4 200,50,200 def
+sp -15,10,-15 4 200,200,50 def
+sp 15,10,-15 4 100,100,100 def
+
+# Center red sphere
+sp 0,0,0 6 255,0,255 mirror

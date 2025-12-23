@@ -1,0 +1,17 @@
+# A simple scene to demonstrate checkerboard textures.
+A   0.2   255,255,255
+C   0,15,-40   0,0,1   60
+L   0,30,-30   0.8   255,255,255
+
+# A plane with a classic black and white checkerboard floor.
+pl  0,-10,0   0,1,0   255,0,0   def bump textures/c19.xpm
+pl  0,0,40   0,0,-1   0,0,30   def checker 0,255,0
+pl  0,0,-70   0,0,-1   255,255,255 mirror 
+
+# A sphere with a red and yellow checkerboard pattern.
+sp  -10,0,20    15   210,161,140   def checker 255,0,0
+sp  10,0,20    15   210,161,140   def checker 0,0,255
+sp  0,35,20    15   210,161,140   def checker 0,255,0
+cy  0,20,20  0,1,0  15 30  210,161,140   mirror
+pa  -5,15,-20   -1,-1,-1   1 7  255,100,180  mirror
+pa  5,15,-20   1,-1,-1   1 7  255,100,180  mirror
